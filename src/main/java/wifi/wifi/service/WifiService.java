@@ -1,10 +1,11 @@
-package wifi.wifi;
+package wifi.wifi.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import wifi.wifi.dao.WifiDao;
 
 import java.io.IOException;
 

@@ -10,7 +10,7 @@
 <body>
 <h1>와이파이 정보 구하기</h1>
 <nav>
-    <a href="#">위치 히스토리 목록</a> |
+    <a href="<%= request.getContextPath() %>/history-list">위치 히스토리 목록</a> |
     <a href="#" id="fetch-wifi-link">Open API 와이파이 정보 가져오기</a>
 </nav>
 

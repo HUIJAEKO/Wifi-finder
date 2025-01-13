@@ -1,7 +1,9 @@
-package wifi.wifi;
+package wifi.wifi.dao;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import wifi.wifi.db.WifiDb;
+import wifi.wifi.service.WifiDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.List" %>
-<%@ page import="wifi.wifi.WifiDto" %>
+<%@ page import="wifi.wifi.service.WifiDto" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
