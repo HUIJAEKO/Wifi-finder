@@ -54,35 +54,23 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // 위치 가져오기
         document.getElementById('getLocationBtn').addEventListener('click', () => {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        document.getElementById('lat').value = position.coords.latitude.toFixed(6);
-                        document.getElementById('lnt').value = position.coords.longitude.toFixed(6);
-                        alert('위치가 성공적으로 가져와졌습니다.');
-                    },
-                    (error) => {
-                        alert('위치를 가져오는 데 실패했습니다.');
-                    }
-                );
+                navigator.geolocation.getCurrentPosition((position) => {
+                    document.getElementById('lat').value = position.coords.latitude.toFixed(6);
+                    document.getElementById('lnt').value = position.coords.longitude.toFixed(6);
+                    alert('위치가 성공적으로 가져와졌습니다.');
+                });
             } else {
                 alert('현재 브라우저는 위치 정보를 지원하지 않습니다.');
             }
         });
 
-        // Open API 와이파이 데이터 가져오기
         document.getElementById('fetch-wifi-link').addEventListener('click', async function (event) {
             event.preventDefault();
-            try {
-                const response = await fetch('<%= request.getContextPath() %>/fetch-wifi', { method: 'POST' });
-                if (!response.ok) throw new Error('데이터 가져오기 실패');
-                const data = await response.json();
-                alert(data.success ? `데이터 저장 완료 (${data.count}개)` : '데이터 저장 중 문제가 발생했습니다.');
-            } catch (error) {
-                alert('오류 발생: ' + error.message);
-            }
+            const response = await fetch('<%= request.getContextPath() %>/fetch-wifi', { method: 'POST' });
+            const data = await response.json();
+            alert(data.success ? `데이터 저장 완료` : '데이터 저장 중 문제가 발생했습니다.');
         });
     });
 </script>
